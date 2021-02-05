@@ -51,8 +51,6 @@
         var axis = new Axis(camera, controls);
         document.body.appendChild(axis.domElement);
 
-        console.log(axis);
-
         const animate = function () {
             requestAnimationFrame(animate);
             renderer.render(scene, camera);
