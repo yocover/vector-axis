@@ -1,0 +1,33 @@
+{
+    "name": "vector-axis",
+    "version": "1.0.0",
+    "description": "threejs based vector axis",
+    "main": "Axis.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "rollup -c",
+        "build-closure": "rollup -c && google-closure-compiler --language_in=ECMASCRIPT5_STRICT --js build/axis.js --js_output_file build/axis.min.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/yocover/vector-axis.git"
+    },
+    "keywords": [
+        "threejs",
+        "vector",
+        "axis"
+    ],
+    "author": "yocover",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/yocover/vector-axis/issues"
+    },
+    "homepage": "https://github.com/yocover/vector-axis#readme",
+    "dependencies": {
+        "three": "^0.125.2"
+    },
+    "devDependencies": {
+        "google-closure-compiler": "^20210202.0.0",
+        "rollup": "^2.3.2"
+    }
+}
