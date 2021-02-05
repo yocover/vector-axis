@@ -14,6 +14,7 @@
     <body>
         <script src="https://unpkg.com/three@0.125.2/build/three.js"></script>
         <script src="https://unpkg.com/three@0.125.2/examples/js/controls/OrbitControls.js"></script>
+        <script src="../build/axis.js"></script>
     </body>
     <script>
         const scene = new THREE.Scene();
@@ -24,7 +25,10 @@
             10000
         );
 
-        const renderer = new THREE.WebGLRenderer();
+        const renderer = new THREE.WebGLRenderer({
+            alpha: true,
+            antialias: true,
+        });
         renderer.setClearColor(0x1e1e1e);
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
@@ -44,10 +48,16 @@
         controls.dampingFactor = 0.05;
         controls.screenSpacePanning = false;
 
+        var axis = new Axis(camera, controls);
+        document.body.appendChild(axis.domElement);
+
+        console.log(axis);
+
         const animate = function () {
             requestAnimationFrame(animate);
             renderer.render(scene, camera);
             controls.update();
+            axis.update();
         };
 
         animate();
